@@ -1,8 +1,9 @@
 ### Bacteria Time
 
 Define a function, `bacteriaTime`, that accepts two arguments:
-  1. currentNum (num) - number of starting bacteria
-  2. targetNum (num) - desired number of bacteria
+
+1. currentNum (num) - number of starting bacteria
+2. targetNum (num) - desired number of bacteria
 
 Assuming that the number of bacteria double every 20 minutes, `bacteriaTime` should
 return the number of minutes required for the number of bacteria to grow from
