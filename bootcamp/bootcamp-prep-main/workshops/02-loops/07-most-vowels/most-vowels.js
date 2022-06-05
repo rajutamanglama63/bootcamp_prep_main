@@ -13,6 +13,7 @@ function mostVowels(str) {
       }
       currentWord = "";
       currentCount = 0;
+      debugger;
     } else {
       currentWord += str[i];
       for (let j = 0; j < vowels.length; j++) {
