@@ -367,33 +367,420 @@ let classRoom = [
   },
 ];
 
-function attendanceCheck(day) {
-  debugger;
-  let arrOfStdWhoArePresentOnSpecificDay = [];
+// function attendanceCheck(day) {
+//   debugger;
+//   let arrOfStdWhoArePresentOnSpecificDay = [];
 
-  for (let i = 0; i < classRoom.length; i++) {
-    let eachObj = classRoom[i];
-    for (let key in eachObj) {
-      // console.log(eachObj[key].length);
+//   for (let i = 0; i < classRoom.length; i++) {
+//     let eachObj = classRoom[i];
+//     for (let key in eachObj) {
+//       // console.log(eachObj[key].length);
 
-      for (j = 0; j < eachObj[key].length; j++) {
-        // console.log(eachObj[key][j][day]);
+//       for (j = 0; j < eachObj[key].length; j++) {
+//         // console.log(eachObj[key][j][day]);
 
-        if (eachObj[key][j][day] === true) {
-          // console.log(key);
-          arrOfStdWhoArePresentOnSpecificDay.push(key);
-        }
-      }
+//         if (eachObj[key][j][day] === true) {
+//           // console.log(key);
+//           arrOfStdWhoArePresentOnSpecificDay.push(key);
+//         }
+//       }
+//     }
+
+// for (let j = 0; j < eachObj.length; j++) {
+//   if (eachObj[key][day] === true) {
+//     arrOfStdWhoArePresentOnSpecificDay.push(eachObj[key]);
+//   }
+// }
+// }
+
+// return arrOfStdWhoArePresentOnSpecificDay;
+// }
+
+// console.log(attendanceCheck("Tuesday"));
+
+// let me = {
+//   name: "Raju",
+//   getGreeting: function () {
+//     return "Hello, my name is " + this.name;
+//   },
+// };
+
+// console.log(me.name);
+// console.log(me.getGreeting());
+
+// let me2 = {
+//   name: "Raju",
+
+//   myGreeting: function () {
+//     let friend = {
+//       name: "Jeff",
+//     };
+//     return `Hi ${friend.name}, my name is ${this.name}.`;
+//   },
+// };
+
+// console.log(me2.myGreeting());
+
+// function callThemAll(objectAddition, val) {
+//   let resultArr = [];
+
+// console.log(objectAddition.addTen(val));
+
+//   for (let keys in objectAddition) {
+//     if (typeof objectAddition[keys] === "function") {
+//      resultArr.push(objectAddition[keys](val))
+//     }
+//   }
+
+//   return resultArr;
+// }
+
+// let addsNums = {
+//   addTen: function (num) {
+//     return num + 10;
+//   },
+
+//   addTwenty: function (num) {
+//     return num + 20;
+//   },
+
+//   someProperty: "value",
+// };
+
+// console.log(callThemAll(addsNums, 50));
+
+//
+
+// function veryOdd(arr) {
+//   let newArr = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 0) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// }
+
+// let allTheNums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// console.log(veryOdd(allTheNums));
+
+// let allTheNums = [1, 2, 3, 4, 5, 6, 7, 8];
+// function veryOddMutant(arr) {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 0) {
+//       arr[i] = "normie";
+
+//       count++;
+//     }
+//   }
+
+//   // return allTheNums;
+//   return count;
+// }
+
+// console.log(veryOddMutant(allTheNums));
+
+// function cloneMachine(animalObj) {
+//   let clonedAnimal = {};
+
+//   clonedAnimal.name = animalObj["name"] + "Clone";
+//   clonedAnimal.species = animalObj["species"];
+//   clonedAnimal.offspring = [];
+
+//   // console.log(clonedAnimal);
+//   animalObj.offspring.push(clonedAnimal.name);
+
+//   return clonedAnimal;
+// }
+
+// let spike = {
+//   name: "Spike",
+//   species: "dog",
+//   offspring: [],
+// };
+
+// let spikeClone = cloneMachine(spike);
+// // console.log(spike);
+// console.log(spikeClone);
+
+// function mySplice(arr, startIndex, numOfElementToDel, val) {
+//   let requiredArr = [];
+//   let deletedNum = [];
+//   // for (let i = 0; i < arr.length; i++) {
+//   //   if (arr[i] === startIndex) {
+//   //     arr[numOfElementToDel] = val;
+//   //   }
+
+//   // }
+
+//   for (let i = 0; i < startIndex; i++) {
+//     requiredArr.push(arr[i]);
+//   }
+
+//   for (let j = startIndex; j < startIndex + numOfElementToDel; j++) {
+//     deletedNum.push(arr[j]);
+//   }
+
+//   requiredArr.push(val);
+
+//   for (let k = startIndex + numOfElementToDel; k < arr.length; k++) {
+//     requiredArr.push(arr[k]);
+//   }
+
+//   while (arr.length) {
+//     arr.pop();
+//   }
+
+//   for (let l = 0; l < requiredArr.length; l++) {
+//     arr.push(requiredArr[l]);
+//   }
+
+//   return deletedNum;
+// }
+
+// console.log(mySplice([1, 2, 3], 1, 1, "rock"));
+
+// const reverseArray = (arr) => {
+//   let newReversedArr = [];
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     let currentArr = arr[i];
+//     newReversedArr.push(currentArr);
+//   }
+
+//   return newReversedArr;
+// };
+
+// console.log(reverseArray([1, 2, 3, 4, 5]));
+
+// a = [1, 2, [3, 4]];
+// b = a.slice();
+
+// a[0] = 1;
+
+// b[2][0] = 123;
+// console.log(a);
+// console.log(b);
+
+// function functionLogger(func, arg) {
+//   console.log("Function starting");
+//   console.log("Function complete");
+
+//   return func(arg);
+// }
+
+// console.log(functionLogger((name) => `Hello ${name}`, "Raju"));
+
+// const finderFunction = (arr, cbFunc) => {
+//   return cbFunc(arr);
+// };
+
+// const isEven = (num) => {
+//   console.log(num);
+//   let indexFound = 1;
+//   for (let i = 0; i < num.length; i++) {
+//     if (num[i] % 2 === 0) {
+//       return i;
+//     } else {
+//       indexFound = 0;
+//     }
+//   }
+//   if (indexFound === 0) {
+//     return -1;
+//   }
+// };
+
+// console.log(finderFunction([1, 3, 5], isEven));
+
+// function whosASpecial(arr) {
+//   let resultStr = "";
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentObj = arr[i];
+//     // console.log(currentObj);
+
+//     resultStr += `${currentObj.name} the ${currentObj.species} is very special! `;
+//   }
+
+//   return resultStr.trim();
+// }
+
+// let specialPets = [
+//   {
+//     name: "Sadie",
+//     species: "cat",
+//   },
+//   {
+//     name: "Layla",
+//     species: "cat",
+//   },
+//   {
+//     name: "Bogie",
+//     species: "dog",
+//   },
+// ];
+
+// console.log(whosASpecial(specialPets));
+
+// function myForEach(arr, callBackFunction) {
+//   for (i = 0; i < arr.length; i++) {
+//     callBackFunction(arr[i], i);
+//   }
+// }
+
+// let sum = 0;
+
+// function addToSum(num) {
+//   sum += num;
+// }
+
+// myForEach([1, 2, 3], addToSum);
+// console.log(sum);
+
+// function chainReaction(startingVal, arr) {
+//   let returnVal0;
+//   let returnVal1;
+//   let returnVal2;
+
+//   funct1 = arr[0];
+//   returnVal0 = funct1(startingVal);
+
+//   funct2 = arr[1];
+//   returnVal1 = funct2(returnVal0);
+
+//   funct3 = arr[2];
+//   returnVal2 = funct3(returnVal1);
+
+//   return returnVal2;
+// }
+
+// function addTen(num) {
+//   return num + 10;
+// }
+
+// function subtractFive(num) {
+//   return num - 5;
+// }
+
+// function multiplyFive(num) {
+//   return num * 5;
+// }
+
+// console.log(chainReaction(0, [addTen, subtractFive, multiplyFive]));
+// // chainReaction(0, [subtractFive, multiplyFive, addTen]);
+
+// function billerBuilder(state) {
+//   return (itemPrice) => {
+//     let finalPrice = 0;
+//     if (state === "NY") {
+//       // finalPrice += (3 / 100) * itemPrice + (4 / 100) * itemPrice;
+//       finalPrice += itemPrice * 1.03 * 1.04;
+//     } else if (state === "NJ") {
+//       // finalPrice += (5 / 100) * itemPrice + (6.625 / 100) * itemPrice;
+//       finalPrice += itemPrice * 1.05 * 1.06625;
+//     }
+
+//     return finalPrice;
+//   };
+// }
+
+// console.log(billerBuilder("NY"));
+// // console.log(finalPriceOfItem(100));
+
+// const timesTableGenerator = (num1) => {
+//   return function product(num2) {
+//     return num1 * num2;
+//   };
+// };
+
+// let timesTable = timesTableGenerator(2);
+// console.log(timesTable(9));
+
+// function partial(callBackFunct, argA) {
+//   return function newFunct(argB) {
+//     debugger;
+//     return callBackFunct(argA, argB);
+//   };
+// }
+
+// function addNumber(a, b) {
+//   return a + b;
+// }
+
+// let p = partial(addNumber, 50);
+// console.log(p(45));
+
+// function callCount() {
+//   let requiredNumber = 0;
+//   return function newFunction() {
+//     return requiredNumber++;
+//   };
+// }
+
+// let newFunctQ = callCount();
+// console.log(newFunctQ());
+// console.log(newFunctQ());
+// console.log(newFunctQ());
+
+// function stringify(callBack) {
+//   return function newFunction() {
+//     let requiredVal = "";
+//     let callBackValue = callBack();
+
+//     requiredVal += callBackValue;
+
+//     // console.log(requiredVal);
+
+//     return requiredVal;
+//   };
+// }
+
+// function bool() {
+//   return true;
+// }
+
+// let a = stringify(bool);
+// console.log(typeof a());
+
+// function getDogBreeder(defaultName, defaultAge) {
+//   function dogBreeder(name = defaultName, age = defaultAge) {
+//     // checking if user has pass correct value or not
+//     if (typeof name === "number") {
+//       (age = name), (name = defaultName);
+//     }
+//     let dog = {
+//       dogName: name,
+//       dogAge: age,
+//     };
+
+//     return dog;
+//   }
+
+//   return dogBreeder;
+// }
+
+// let a = getDogBreeder("Snoop doggy dog", 0);
+// console.log(a(2));
+
+function cacheSavings(cb) {
+  let cache = {};
+  function newFunct(arg) {
+    if (!(arg in cache)) {
+      let result = cb(arg);
+
+      cache[arg] = result;
     }
-
-    // for (let j = 0; j < eachObj.length; j++) {
-    //   if (eachObj[key][day] === true) {
-    //     arrOfStdWhoArePresentOnSpecificDay.push(eachObj[key]);
-    //   }
-    // }
+    return cache;
   }
 
-  return arrOfStdWhoArePresentOnSpecificDay;
+  return newFunct;
 }
 
-console.log(attendanceCheck("Tuesday"));
+function numberAdditon(num) {
+  return num + 10;
+}
+
+let c = cacheSavings(numberAdditon);
+console.log(c(100));
